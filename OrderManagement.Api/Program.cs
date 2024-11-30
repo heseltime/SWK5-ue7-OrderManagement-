@@ -5,6 +5,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+builder.Services.AddCors(builder =>
+    builder.AddDefaultPolicy(policy =>
+        policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()));
+
 builder.Services.AddControllers(options => options.ReturnHttpNotAcceptable = true)
     .AddJsonOptions(options =>
     {
@@ -27,5 +31,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCors();
 
 app.Run();
