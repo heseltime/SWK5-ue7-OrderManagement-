@@ -5,6 +5,8 @@ using OrderManagement.Api.Mapping;
 using OrderManagement.Api.Mapper;
 using OrderManagement.Domain;
 using OrderManagement.Logic;
+using System.Security.Cryptography.X509Certificates;
+using System.Runtime.CompilerServices;
 
 namespace OrderManagement.Api.Controllers
 {
@@ -49,7 +51,7 @@ namespace OrderManagement.Api.Controllers
             return Ok(customer.ToCustomerDto());
         }
 
-        // POST /api/Customers
+        // POST /api/Customers (customer also enable now in Program.cs)
         [HttpPost]
         public async Task<ActionResult<CustomerDto>> CreateCustomer([FromBody] CustomerForCreationDto customerDto)
         {
@@ -67,6 +69,21 @@ namespace OrderManagement.Api.Controllers
                 value: customer.ToCustomerDto());
         }
 
+        // UpdateCustomer
+        // PUT /api/customers/<GUID>
+        [HttpPut("{customerId}")]
+        public async Task<ActionResult> UpdateCustomer([FromRoute] Guid customerId, [FromBody] CustomerForUpdateDto customerForUpdateDto)
+        {
+            Domain.Customer? customer = await logic.GetCustomerAsync(customerId);
+            if (customer is null)
+            {
+                return NotFound();
+            }
+
+            customerForUpdateDto.UpdateCustomer(customer);
+            await logic.UpdateCustomerAsync(customer);
+            return NoContent();
+        }
 
     }
 }

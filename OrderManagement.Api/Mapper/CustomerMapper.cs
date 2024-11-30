@@ -13,5 +13,8 @@ namespace OrderManagement.Api.Mapper
         [MapperIgnoreTarget(nameof(Domain.Customer.TotalRevenue))]
         public static partial Domain.Customer ToCustomer(
             this CustomerForCreationDto customerForCreationDto);
+        public static partial void UpdateCustomer(
+                this CustomerForUpdateDto customerForUpdateDto,
+                Domain.Customer customer);
     }
 }
