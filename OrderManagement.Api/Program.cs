@@ -16,6 +16,8 @@ builder.Services.AddControllers(options => options.ReturnHttpNotAcceptable = tru
 
 builder.Services.AddScoped<IOrderManagementLogic, OrderManagementLogic>();
 
+builder.Services.AddRouting(options => options.LowercaseUrls = true);
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
