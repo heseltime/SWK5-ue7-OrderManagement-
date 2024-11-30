@@ -85,5 +85,19 @@ namespace OrderManagement.Api.Controllers
             return NoContent();
         }
 
+        // Delete
+        // DELETE /api/customers/<GUID>
+        [HttpDelete("{customerId}")]
+        public async Task<ActionResult> DeleteCustomer(Guid customerId)
+        {
+            if (await logic.DeleteCustomerAsync(customerId))
+            {
+                return NoContent(); // design decision to let client know if succesful or not
+            } else
+            {
+                return NoContent();
+            }
+        }
+
     }
 }
