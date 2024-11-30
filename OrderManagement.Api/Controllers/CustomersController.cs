@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using OrderManagement.Api.Dtos;
 using OrderManagement.Api.Mapping;
+using OrderManagement.Api.Mapper;
 using OrderManagement.Domain;
 using OrderManagement.Logic;
 
@@ -50,7 +51,7 @@ namespace OrderManagement.Api.Controllers
 
         // POST /api/Customers
         [HttpPost]
-        public async Task<ActionResult<CustomerDto>> CreateCustomer([FromBody] CustomerDto customerDto)
+        public async Task<ActionResult<CustomerDto>> CreateCustomer([FromBody] CustomerForCreationDto customerDto)
         {
             if (customerDto.Id != Guid.Empty &&
                 await logic.CustomerExistsAsync(customerDto.Id))
