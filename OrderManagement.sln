@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35219.272
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderManagement.Api", "OrderManagement.Api\OrderManagement.Api.csproj", "{13D3E284-3B92-470E-BC2D-828C64E3F773}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderManagement.Api", "OrderManagement.Api\OrderManagement.Api.csproj", "{13D3E284-3B92-470E-BC2D-828C64E3F773}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderManagement.Domain", "OrderManagement.Domain\OrderManagement.Domain.csproj", "{CA229A15-4519-45EA-98B2-A6E2382D9B61}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderManagement.Logic", "OrderManagement.Logic\OrderManagement.Logic.csproj", "{EB0D739A-3A4C-412D-928C-F31B345DBE85}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderManagement.JavaScriptClient", "OrderManagement.JavaScriptClient\OrderManagement.JavaScriptClient.csproj", "{6211839E-A790-4FD8-AFFE-55CB7BB84EE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{EB0D739A-3A4C-412D-928C-F31B345DBE85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB0D739A-3A4C-412D-928C-F31B345DBE85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB0D739A-3A4C-412D-928C-F31B345DBE85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6211839E-A790-4FD8-AFFE-55CB7BB84EE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6211839E-A790-4FD8-AFFE-55CB7BB84EE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6211839E-A790-4FD8-AFFE-55CB7BB84EE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6211839E-A790-4FD8-AFFE-55CB7BB84EE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
